@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leetcode</title>
+    <title>hackerrank</title>
 </head>
 <body>
     <script>
 
-        function mySolution() {
-
+        // Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+        // example:
+            // arr = [1, 2, 3, 4, 5]
+            // the minimum is 1 + 2 + 3 + 4 = 10
+            // the maximum is 2 + 3 + 4 + 5 = 14
+            // the function should print 10 14
+            
+        function mySolution(arr) {
+            // doing the calculation for the sum of all the number in the array
+            let sum = arr.reduce((a, b) => a + b);
+            // finding the maximum value in the array
+            let maxVal = Math.max(...arr);
+            // finding the minimum value in the array
+            let minVal = Math.min(...arr);
+            // taking the sum and subtracting the largest number in the array to get the minimum value and subtracting the smallest number in the array to get the largest sum
+            console.log(`${sum - maxVal} ${sum - minVal}`);
         }
 
-        console.log(mySolution());
+        console.log(mySolution([1, 2, 3, 4, 5]));
 
     </script>
 </body>
